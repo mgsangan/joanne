@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Joanne</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fceef4;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #start-button {
+      display: block;
+      margin: 40px auto;
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      max-width: 90%;
+    }
+
+    #start-button:hover {
+      background-color: #c0255b;
+    }
+
+    #message-container {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 24px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      display: none;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d6336c;
+      font-weight: bold;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #typewriter {
+      font-size: 1.1em;
+      line-height: 1.7;
+      white-space: pre-line;
+      border-right: 2px solid #d6336c;
+      overflow: hidden;
+      animation: blink 0.75s step-end infinite;
+      min-height: 400px;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 40px;
+      color: #555;
+      font-size: 1em;
+    }
+
+    @media (max-width: 600px) {
+      #message-container {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 1.6em;
+      }
+
+      #typewriter {
+        font-size: 1em;
+      }
+
+      .signature {
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="tanging_ikaw.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Start Button -->
+  <button id="start-button" onclick="startSite()">Please click this Joanne</button>
+
+  <!-- Message Container -->
+  <div id="message-container">
+    <h1>Hi Joanne</h1>
+    <div id="typewriter"></div>
+    <div class="signature">— Mark</div>
+  </div>
+
+  <script>
+    const fullMessage = `
+I just want to be honest with you.
+
+I made this little website for you not to impress you or anything like that but simply because I genuinely like you. I wanted to express how I feel in a more meaningful way than just sending a simple message.
+
+From the very first time we talked on Litmatch, I felt something different. The way you spoke to me, how naturally we connected it really stood out. You made me feel at ease, and I appreciated that more than you probably realize.
+
+Then we started talking on Facebook, and that bond only grew stronger. The more we talked, the more I found myself looking forward to our conversations and thinking about you even when we weren’t chatting.
+
+You’ve become someone really important to me. Every time we talk, you make my day better. You’re not just someone I like talking to you’re someone I genuinely care about.
+
+I want you to know this from the bottom of my heart.
+I’ll never leave you. I’m not looking for anyone else because it’s only you.
+
+I’ll do anything for you, and I’ll support you in anything you do because that’s what you deserve. I want to see you happy and reaching everything you dream of. I’ll be here through the highs and lows, cheering you on no matter what.
+
+This website is just a small way of showing how much you mean to me. I hope when you see it, you feel even just a little bit of the appreciation, care, and affection I have for you.
+
+Thank you for being part of my life, Joanne. I’m truly thankful we met.
+`;
+
+    function typeText(text, index = 0) {
+      if (index <= text.length) {
+        document.getElementById("typewriter").innerText = text.slice(0, index);
+        setTimeout(() => typeText(text, index + 1), 70); // Slower speed here
+      }
+    }
+
+    function startSite() {
+      const music = document.getElementById('bg-music');
+      const message = document.getElementById('message-container');
+      const button = document.getElementById('start-button');
+
+      music.play().then(() => {
+        message.style.display = 'block';
+        button.style.display = 'none';
+        typeText(fullMessage);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }).catch(err => {
+        alert("Music failed to play. Please tap the screen or allow autoplay.");
+      });
+    }
+  </script>
+</body>
+</html>
