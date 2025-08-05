@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Joanne</title>
+  <title>For Ayi</title>
   <style>
     * {
       box-sizing: border-box;
@@ -11,7 +11,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fceef4;
+      background-color: #fceef4;
       color: #333;
       margin: 0;
       padding: 20px;
@@ -38,7 +38,10 @@
       max-width: 900px;
       margin: 0 auto 60px;
       padding: 24px;
-      background: white;
+      background: url('AYI.jpg') no-repeat center center;
+      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.85); /* White overlay for readability */
+      background-blend-mode: lighten;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
       display: none;
@@ -101,41 +104,35 @@
   </audio>
 
   <!-- Start Button -->
-  <button id="start-button" onclick="startSite()">Please click this Joanne</button>
+  <button id="start-button" onclick="startSite()">Please click this AYI</button>
 
   <!-- Message Container -->
   <div id="message-container">
-    <h1>Hi Joanne</h1>
+    <h1>Hi AYI</h1>
     <div id="typewriter"></div>
-    <div class="signature">— Mark</div>
+    <div class="signature">— FUNDADOR</div>
   </div>
 
   <script>
     const fullMessage = `
-I just want to be honest with you.
 
-I made this little website for you not to impress you or anything like that but simply because I genuinely like you. I wanted to express how I feel in a more meaningful way than just sending a simple message.
+I hope this message brings a little light to your day, because you truly deserve all the happiness in the world. I still remember the first time we met on Litmatch — it felt so unexpected, yet so right. Who would’ve thought that from a simple chat, I’d meet someone as genuine, kind, and amazing as you?
 
-From the very first time we talked on Litmatch, I felt something different. The way you spoke to me, how naturally we connected it really stood out. You made me feel at ease, and I appreciated that more than you probably realize.
+You have this beautiful energy that makes people feel safe, understood, and valued. And even in your quietest moments, there's something about you that speaks volumes. You don’t need to try hard — just being yourself is more than enough.
 
-Then we started talking on Facebook, and that bond only grew stronger. The more we talked, the more I found myself looking forward to our conversations and thinking about you even when we weren’t chatting.
+Whenever life feels overwhelming or uncertain, I want you to remember this:
+Always be happy. I’m here for you — always. No matter what you're going through, you're not alone. I’ll be right here — listening, supporting, and cheering you on every step of the way.
 
-You’ve become someone really important to me. Every time we talk, you make my day better. You’re not just someone I like talking to you’re someone I genuinely care about.
+You’re strong, thoughtful, and one of a kind. The world is better with you in it, and so is mine.
 
-I want you to know this from the bottom of my heart.
-I’ll never leave you. I’m not looking for anyone else because it’s only you.
+Take care, Ayi. You’re someone I’m really grateful to know. 💛
 
-I’ll do anything for you, and I’ll support you in anything you do because that’s what you deserve. I want to see you happy and reaching everything you dream of. I’ll be here through the highs and lows, cheering you on no matter what.
-
-This website is just a small way of showing how much you mean to me. I hope when you see it, you feel even just a little bit of the appreciation, care, and affection I have for you.
-
-Thank you for being part of my life, Joanne. I’m truly thankful we met.
 `;
 
     function typeText(text, index = 0) {
       if (index <= text.length) {
         document.getElementById("typewriter").innerText = text.slice(0, index);
-        setTimeout(() => typeText(text, index + 1), 70); // Slower speed here
+        setTimeout(() => typeText(text, index + 1), 70);
       }
     }
 
